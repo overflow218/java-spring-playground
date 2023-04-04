@@ -1,5 +1,6 @@
 package com.overflow218.my_first_spring;
 
+import com.overflow218.my_first_spring.aop.TimeTraceAop;
 import com.overflow218.my_first_spring.repository.*;
 import com.overflow218.my_first_spring.service.MemberService;
 import org.springframework.context.annotation.Bean;
@@ -14,10 +15,14 @@ public class SpringConfig {
 //    private final EntityManager em;
 
     private final MemberRepository memberRepository;
+    private final TimeTraceAop timeTraceAop;
 
     public SpringConfig(MemberRepository memberRepository) {
+
         this.memberRepository = memberRepository;
+        this.timeTraceAop = new TimeTraceAop();
     }
+
 
 //    public SpringConfig(DataSource dataSource, EntityManager em) {
 //        this.dataSource = dataSource;
