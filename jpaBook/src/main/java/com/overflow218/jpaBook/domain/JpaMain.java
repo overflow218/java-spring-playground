@@ -16,16 +16,17 @@ public class JpaMain {
         EntityTransaction tx = entityManager.getTransaction();
 
         try{
-            tx.begin();
-            Member member = new Member();
-            member.setName("hj");
-            entityManager.persist(member);
+            System.out.println("hello");
+//            tx.begin();
+//            Member member = new Member();
+//            member.setName("hj");
+//            entityManager.persist(member);
+//
+//            Order order = new Order();
+//            order.setMember(member);
+//            entityManager.persist(order);
 
-            Order order = new Order();
-            order.setMember(member);
-            entityManager.persist(order);
-
-            tx.commit();
+//            tx.commit();
         } catch(Exception e)
         {
             System.out.println("error 발생======" + e.getMessage());
